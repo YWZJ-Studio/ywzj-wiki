@@ -2,11 +2,11 @@
 # 这是文章的标题
 title: 页面配置
 # 你可以自定义封面图片
-cover: /assets/images/cover1.jpg
+cover: /images/ywzj_vehicle.jpg
 # 这是页面的图标
 icon: file
 # 这是侧边栏的顺序
-order: 3
+order: 999
 # 设置作者
 author: Ms.Hope
 # 设置写作时间

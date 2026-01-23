@@ -3,16 +3,16 @@ import { hopeTheme } from "vuepress-theme-hope";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: "https://github.com/YWZJ-Studio",
 
   author: {
-    name: "Mr.Hope",
-    url: "https://mister-hope.com",
+    name: "YWZJ",
+    url: "https://github.com/YWZJ-Studio",
   },
 
-  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
+  logo: "/images/logo.jpg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "https://github.com/YWZJ-Studio/ywzj-wiki",
 
   docsDir: "src",
 

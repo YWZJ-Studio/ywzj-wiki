@@ -1,12 +1,11 @@
 import { sidebar } from "vuepress-theme-hope";
 
-export const zhSidebar = sidebar({
-  "/zh/": [
+export const zhSidebar = sidebar([
     {
-      text: "载具包",
-      icon: "book",
-      prefix: "vehicle_pack/",
-      children: "structure",
+        text: "载具包制作指南",
+        link: "/zh/vehicle_pack/01_whats_vehicle_pack",
+        prefix: "/zh/vehicle_pack/",
+        collapsible: true,
+        children: "structure"
     }
-  ],
-});
+]);
