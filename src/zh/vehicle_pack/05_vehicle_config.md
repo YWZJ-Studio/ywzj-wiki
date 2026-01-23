@@ -10,7 +10,8 @@ icon: book
 一个载具配置文件对应一个独立载具，其记录了载具所使用的模板，性能参数，视角配置，部件结构关系等
 
 ## 概览
-在`data/tutorial/vehicles`目录下新建`载具名.json`文件，本文示例为`data/tutorial/vehicles/ztz99a.json`
+在`data/tutorial/vehicles`目录下新建`载具名.json`文件
+本文示例为`data/tutorial/vehicles/ztz99a.json`
 ```
 {
   "type": "ywzj_vehicle:tracked_vehicle", # 使用履带式载具模板
