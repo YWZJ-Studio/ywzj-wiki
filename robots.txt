@@ -1,4 +1,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://vuepress-theme-hope-docs-demo.netlify.app/ywzj-wiki/sitemap.xml
+Sitemap: https://github.com/YWZJ-Studio/ywzj-wiki/sitemap.xml
