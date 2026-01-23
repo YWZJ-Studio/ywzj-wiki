@@ -48,7 +48,7 @@ vehicle_pack.meta.json文件包含了载具包的基本识别信息，其中`tit
 
 ## 自动Tab
 正确识别到载具包后，客户端会自动注册一个创造模式Tab页来罗列其内载具的刷怪蛋
-放置于`assets/textures/tab.png`的文件将作为该页的物品图标
+放置于`assets/tutorial/textures/tab.png`的文件将作为该页的物品图标
 ::: center
 ![自动注册的Tab](/images/tab.png)
 :::
