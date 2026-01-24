@@ -3,10 +3,15 @@ order: 6
 icon: book
 ---
 
-# **结构模型**
-基岩模型似乎只能用于渲染，但YWZJ创新性地使用它来描述逻辑结构，服务端也因此需要加载`载具名.structure.json`**结构模型**文件
-
+# 结构模型
+基岩模型似乎只能用于渲染，但YWZJ创新性地使用它来描述逻辑结构，服务端也因此需要加载存放于`data/tutorial/models/bedrock/vehicle/载具名.structure.json`的**结构模型**文件，其以载具配置的`structure_model`参数体现
+```
+"structure_model": "ywzj_vehicle:vehicle/ztz99a"
+```
 **结构模型**的具象化是OBB，其广泛用于物理碰撞、精细命中、方位逻辑表达等场景
+::: tip
+考虑计算复杂度，载具目前仅使用车体结构中最大的OBB来表现整体运动的物理效果
+:::
 
 ## 关于OBB
 方向包围盒OBB（Oriented Bounding Box）是一种任意朝向的立方体状数学描述
@@ -27,7 +32,7 @@ icon: book
     <img src="/images/model_in_bb.png" style="width: 45%;">
     <img src="/images/obb_in_bb.png" style="width: 45%;">
   </div>
-  <p style="margin-top: 10px; font-size: 13px">Blockbench中的载具模型与**结构模型**</p>
+  <p style="margin-top: 10px; font-size: 13px">Blockbench中的载具模型与结构模型</p>
 </div>
 
 ## 分组与枢轴
@@ -44,14 +49,14 @@ icon: book
 
 若有更复杂的部件运动关系（~~比如多炮塔神教~~），显然需要更深层嵌套的OBB组来描述它们
 ::: tip
-武器单元是特殊的载具部件，其炮管与座圈分属于两个枢轴，因此需两个组来描述，其中约定名为`部件名_barrel`的组属于炮管组，如`turret_barrel`就是主炮管的组
+武器单元是特殊的载具部件，其炮管与座圈分属于两个枢轴，因此需两个组来描述，其中约定名为`部件名_barrel`的组属于炮管组，如`turret_barrel`就是主炮塔的炮管组
 :::
 
 <div style="display: flex; justify-content: center; gap: 10px;">
   <img src="/images/draw_obb1.png" style="width: 80%;">
 </div>
 <div style="display: flex; justify-content: center; gap: 10px;">
-  <p style="margin-top: 10px; font-size: 13px">你可以直接在**视觉模型**上拖拽拉伸绘制**结构模型**</p>
+  <p style="margin-top: 10px; font-size: 13px">你可以直接在视觉模型上拖拽拉伸绘制结构模型</p>
 </div>
 
 枢轴对齐是本章稍显费力的环节，因为基岩模型中，枢轴是嵌套递归计算绝对位置的，所以**视觉模型**中某结构的枢轴坐标往往不能直接抄给**结构模型**
@@ -60,5 +65,5 @@ icon: book
     <img src="/images/draw_obb2.png" style="width: 45%;">
     <img src="/images/draw_obb3.png" style="width: 45%;">
   </div>
-  <p style="margin-top: 10px; font-size: 13px">炮塔在**视觉模型**与**结构模型**的枢轴位置一致</p>
+  <p style="margin-top: 10px; font-size: 13px">炮塔的枢轴在视觉模型与结构模型的位置保持一致</p>
 </div>

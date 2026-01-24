@@ -17,7 +17,7 @@ icon: book
   "animations": "tutorial:entity/ztz99a.animation",     # 载具动画，存放于animations/bedrock/entity/ztz99a.animation.json
   "script": "tutorial:ztz99a",                          # 载具动画脚本，存放于scripts/ztz99a.js
   "sounds": {                                           # 于sounds.json注册的音效
-    "engine_start": "tutorial:ztz99a_engine_start",
+    "engine_start": "tutorial:ztz99a_engine_start",     # 载具默认具有发动机的启动、待机、运转、关闭音效
     "engine_idle": "tutorial:ztz99a_engine_idle",
     "engine_run": "tutorial:ztz99a_engine_run"
   },

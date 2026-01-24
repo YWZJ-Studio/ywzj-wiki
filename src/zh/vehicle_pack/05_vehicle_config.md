@@ -8,10 +8,13 @@ icon: book
 
 ## 载具配置文件
 一个载具配置文件对应一个独立载具，其记录了载具所使用的模板，性能参数，视角配置，部件结构关系等
+::: tip
+载具配置文件名即是载具的唯一id，如`data/tutorial/vehicles/ztz99a.json`例中，`ztz99a`就是示例载具在注册时的唯一id，是所有与它关联的数据的主键，世界中已生成的对应载具也在NBT中记录了该值，因此它不可随意修改
+:::
 
 ## 概览
 在`data/tutorial/vehicles`目录下新建`载具名.json`文件
-本文示例为`data/tutorial/vehicles/ztz99a.json`
+本文示例为`data/tutorial/vehicles/ztz99a.json`，在接下来的章节中会逐步介绍它们的含义
 ```
 {
   "type": "ywzj_vehicle:tracked_vehicle", # 使用履带式载具模板
