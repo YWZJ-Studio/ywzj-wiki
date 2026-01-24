@@ -4,7 +4,9 @@ icon: circle-info
 ---
 
 # 开始之前
-
+::: warning
+文档尚在施工中
+:::
 ## 基础知识
 类似于原版的**数据包**、TaCZ的[**枪械包**](https://tacwiki.mcma.club/zh/gunpack/01_before_start.html)，永无止境载具支持**载具包**系统，可基于数据驱动来快速追加载具，无需修改模组本体代码
 

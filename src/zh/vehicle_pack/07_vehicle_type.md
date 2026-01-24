@@ -11,15 +11,26 @@ icon: book
 
 在载具配置的`type`参数中填写不同的枚举值以启用不同的载具模板
 ```
-"type": "ywzj_vehicle:tracked_vehicle"
+{
+  "type": "ywzj_vehicle:tracked_vehicle", # 载具模板
+  "attributes": {
+    "brake_acceleration": 0.025,
+    "forward_acceleration": 0.01,
+    "backward_acceleration": 0.01,
+    "max_speed_forward": 0.5,
+    "max_speed_backward": 0.2,
+    "turn_acceleration": 1,
+    "max_turn": 2
+  },
+  ...
 ```
 
-| 模板名   |    type     | 释义                    |
-|:------|:-----------:|:----------------------|
-| 通用    |   ywzj_vehicle:generic   | 无运动实现，但具备可控部件的载具，如固定机枪       |
-| 轮式    |   ywzj_vehicle:wheeled_vehicle   | 如汽车      |
-| 履带式   |  ywzj_vehicle:tracked_vehicle  | 如坦克       |
-| 旋翼机式   |   ywzj_vehicle:rotary_wing_vehicle    | 如直升机、四轴无人机    |
+| 模板名  |               type               | 释义                     |
+|:-----|:--------------------------------:|:-----------------------|
+| 通用   |       ywzj_vehicle:generic       | 无运动实现，但具备可控部件的载具，如固定机枪 |
+| 轮式   |   ywzj_vehicle:wheeled_vehicle   | 如汽车                    |
+| 履带式  |   ywzj_vehicle:tracked_vehicle   | 如坦克                    |
+| 旋翼机式 | ywzj_vehicle:rotary_wing_vehicle | 如直升机、四轴无人机             |
 
 ## 载具属性
 不同的载具类型可使用不同的载具属性

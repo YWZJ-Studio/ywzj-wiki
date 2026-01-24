@@ -7,7 +7,9 @@ icon: book
 以下讨论的是载具包的`assets`目录
 
 ## 客户端资产配置文件
-在`assets/tutorial/display/vehicle`目录下新建`载具名.json`文件，本文示例为`assets/tutorial/display/vehicle/ztz99a.json`
+在`assets/tutorial/display/vehicle`目录下新建`载具名.json`文件
+
+本文示例为`assets/tutorial/display/vehicle/ztz99a.json`
 ```
 {
   "type": "ywzj_vehicle:tracked_vehicle",               # 使用履带式载具模板
