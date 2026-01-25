@@ -25,6 +25,10 @@ icon: book
   <p style="margin-top: 10px; font-size: 13px">OBB表现的车体、炮塔、炮管等</p>
 </div>
 
+::: tip
+在YWZJ中，许多配置的自动计算都依赖于OBB，如玩家的乘坐位置、武器的炮口位置等
+:::
+
 ## 开发工具
 文档撰写的目前，大部分载具模组的OBB配置往往基于代码硬编码或特殊格式，开发非常不便。YWZJ因**使用基岩模型描述OBB**，Blockbench下即可自由绘制OBB
 <div style="text-align: center;">
