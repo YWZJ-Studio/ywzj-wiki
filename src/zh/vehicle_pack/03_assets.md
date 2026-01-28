@@ -16,7 +16,7 @@ icon: book
     <img src="/images/prepare_assets1.png" style="width: 65%;">
   </div>
 
-- 若无特殊需求，可动部件应不自带旋转，即绘制时就处在其默认朝向上
+- 若无特殊需求，则可动部件应以**三轴旋转都为0时，朝向Z轴正方向**来绘制
 
   <div style="display: flex; justify-content: center; gap: 10px;">
     <img src="/images/prepare_assets2.png" style="width: 65%;">
