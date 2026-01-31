@@ -53,6 +53,11 @@ jobs:
           pnpm run docs:build
           > src/.vuepress/dist/.nojekyll
 
+      - name: 设置 Node.js（Web Editor）
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       # 7. 构建编辑器
       - name: 构建 Web Editor
         run: |
