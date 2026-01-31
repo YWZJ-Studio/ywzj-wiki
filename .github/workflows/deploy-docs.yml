@@ -65,7 +65,7 @@ jobs:
       - name: 合并 Web Editor 到 Pages
         run: |
           mkdir -p src/.vuepress/dist/editor
-          cp -r webeditor-src/webeditor/dist/* src/.vuepress/dist/editor/
+          cp -r webeditor-src/webeditor/dist/* src/.vuepress/dist/vehicle-editor/
 
       # 9. 部署到 gh-pages
       - name: 部署文档
