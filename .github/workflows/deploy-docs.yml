@@ -64,7 +64,7 @@ jobs:
       # 8. 合并编辑器到 wiki 产物
       - name: 合并 Web Editor 到 Pages
         run: |
-          mkdir -p src/.vuepress/dist/editor
+          mkdir -p src/.vuepress/dist/vehicle-editor
           cp -r webeditor-src/webeditor/dist/* src/.vuepress/dist/vehicle-editor/
 
       # 9. 部署到 gh-pages
