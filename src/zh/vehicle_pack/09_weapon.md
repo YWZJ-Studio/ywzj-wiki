@@ -44,16 +44,37 @@ YWZJ实现了一个基础的武器系统，其关联于一个武器单元进行�
   "reload": {
     "time": 100, # 装弹时间
     "ammo": "ywzj_vehicle:ammo_machine_gun" # 使用的弹药物品
-  },
+  }
+}
+```
+
+武器的资产配置与载具类似。武器一般具有音效，而大型弹射物一般具有模型（如导弹）
+
+示例为`assets/tutorial/display/weapons/qjt_5.8mm.json`中配置了音效
+```
+{
+  "type": "ywzj_vehicle:weapon",
   "sounds": {
     "fire": "ywzj_vehicle:gun_7.62mm_shot",
     "reload": "ywzj_vehicle:gun_reload"
   }
 }
 ```
+一个PL-8的导弹资产配置，额外配置了模型贴图
+```
+{
+  "type": "ywzj_vehicle:weapon",
+  "model": "ywzj_vehicle:entity/missile_pl_8",
+  "texture": "ywzj_vehicle:textures/entity/j8.png",
+  "sounds": {
+    "fire": "ywzj_vehicle:missile_launch",
+    "reload": "ywzj_vehicle:common_reload"
+  }
+}
+```
 
 ## 武器单元
-所有武器都需关联于一个**武器单元**的载具部件进行运作，一个**武器单元**可具备多个武器
+所有武器都需关联于一个**武器单元**的载具部件进行运作，一个武器单元可具备多个武器，一个武器只能与一个武器单元关联
 <div style="display: flex; justify-content: center; gap: 10px;">
   <img src="/images/weapon_unit.png" style="width: 80%;">
 </div>
@@ -132,3 +153,44 @@ YWZJ实现了一个基础的武器系统，其关联于一个武器单元进行�
 ::: tip
 虽然武器单元规定有2个组，但CS/SA5的例子中，导弹发射架只有炮管组`turret_missile_barrel`，而没有座圈组`turret_missile`，这是考虑配置便捷性，没有座圈概念的武器单元**可以省略座圈组的配置**
 :::
+
+## 武器单元的自带旋转
+在**资产准备**篇的[**模型注意事项**](03_assets.md#模型注意事项)中，我们强调了部件**三轴旋转都为0时，朝向Z轴正方向**，因为我们约定在没有任何车体、部件旋转时，它们的朝向都是Z轴正方向
+
+在武器不指向载具正方向的场景，其需要在结构模型的座圈组与炮管组设置自带旋转，其中座圈组设置Y轴自带旋转，炮管组设置X轴自带旋转
+
+<div style="text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 10px;">
+    <img src="/images/self_rot0.png" style="width: 45%;">
+    <img src="/images/self_rot1.png" style="width: 45%;">
+  </div>
+  <p style="margin-top: 10px; font-size: 13px">AC-130的侧方航炮在结构模型的座圈组中有90度的自带旋转</p>
+</div>
+
+考虑了自带旋转的AC-130侧方航炮的武器配置
+```
+...
+    {
+      "id": "105mm_cannon",
+      "name": "105mm_cannon",
+      "type": "ywzj_vehicle:weapon",
+      "structure_bone": "gun2",
+      "optical_sight_type": "crt",
+      "crosshair_style": "circle",
+      "seat_offset": [0, 3, 5],
+      "optical_sight_offset": [-0.5, 0.1, 1.2],
+      "operator_on_weapon_unit": false,
+      "rot_info": {
+        "x_rot_speed": 8,
+        "y_rot_speed": 8,
+        "x_rot_min": -15,
+        "x_rot_max": 20,
+        "y_rot_min": -105, # -90 - 15 注意基岩模型与载具对Y轴旋转方向的约定相反
+        "y_rot_max": -75   # -90 + 15
+      },
+      "weapons": [
+        "dragonrise_reforge_ywzj:cannon_105mm"
+      ]
+    },
+...
+```

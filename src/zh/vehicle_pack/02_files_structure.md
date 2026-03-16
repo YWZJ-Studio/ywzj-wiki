@@ -12,13 +12,14 @@ icon: book
 ─tutorial_vehicle_pack
 ├─assets
 │  └─tutorial # 命名空间
-│      ├─animations  # 动画，如履带运动
-│      ├─display     # 载具客户端表现的总配置
-│      ├─lang        # 语言
-│      ├─models      # 模型
-│      ├─scripts     # 动画脚本，描述程序性动画：如炮塔转动
-│      ├─sounds      # 音效
-│      └─textures    # 贴图
+│      ├─animation_controllers  # 动画控制器
+│      ├─animations             # 动画
+│      ├─display                # 客户端资产配置
+│      ├─lang                   # 语言
+│      ├─models                 # 模型
+│      ├─scripts                # 动画脚本，描述程序性动画：如炮塔转动
+│      ├─sounds                 # 音效
+│      └─textures               # 贴图
 ├─data
 │   └─tutorial # 命名空间
 │      ├─models     # 服务端模型，如解析OBB用的结构基岩模型

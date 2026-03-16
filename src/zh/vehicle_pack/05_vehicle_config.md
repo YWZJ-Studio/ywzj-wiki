@@ -8,9 +8,11 @@ icon: book
 
 ## 载具配置文件
 一个载具配置文件对应一个独立载具，其记录了载具所使用的模板，性能参数，视角配置，部件结构关系等
-::: tip
-载具配置文件名即是载具的唯一id，如`data/tutorial/vehicles/ztz99a.json`例中，`ztz99a`就是示例载具在注册时的唯一id，是所有与它关联的数据的主键，世界中已生成的对应载具也在NBT中记录了该值，因此它不可随意修改
-:::
+
+## VehicleId
+载具配置文件名即是载具的唯一id，即**VehicleId**，如`data/tutorial/vehicles/ztz99a.json`例中，`ztz99a`就是示例载具在注册时的VehicleId，是所有与它关联的数据的主键
+
+世界中已生成的载具也在NBT中以`YwzjVehicleId`记录了该值，因此它不可随意修改
 
 ## 概览
 在`data/tutorial/vehicles`目录下新建`载具名.json`文件
@@ -32,6 +34,10 @@ icon: book
     "third_person_center_offset": [0, 3, 0],
     "third_person_distance": 7,
     "sound_distance": 7
+    "passenger_view_rot": {               # 载具旋转是否主动影响玩家视角旋转
+      "rot_by_vehicle_in_third_person": false,
+      "rot_by_vehicle_in_operator": true
+    }
   },
   "energy_info": {
     "energy_capacity": 1, # 油箱大小，注意油量会影响载具总重
@@ -44,7 +50,7 @@ icon: book
   },
   "defense_stats": {
     "damage_threshold": 50, # 最小击穿伤害，低于该值将只能造成很微小的伤害
-    "impact_kinetic_damage_coefficient": 0.1 # 撞击地形时，动能造成伤害的系数
+    "impact_multiplier": 0.1 # 撞击地形时，动能造成伤害的系数
   },
   "structure_model": "ywzj_vehicle:vehicle/ztz99a", # 结构模型，存放于 data/tutorial/models/bedrock/vehicle/ztz99a.structure.json
   "parts": [ # 载具部件配置，注意：第一个可乘坐的部件是驾驶员位

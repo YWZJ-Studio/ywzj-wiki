@@ -40,7 +40,7 @@ icon: book
 </div>
 
 ## 分组与枢轴
-与渲染用的**视觉模型**类似，**结构模型**也需要良好**分组**，并且**枢轴**位置关系与**视觉模型**一致，才可保证在复杂旋转时OBB的逻辑方向与载具的视觉方向一致
+与渲染用的**渲染模型**类似，**结构模型**也需要良好**分组**，并且**枢轴**位置关系与**渲染模型**一致，才可保证在复杂旋转时OBB的逻辑方向与载具的视觉方向一致
 
 ::: tip
 **结构模型**中的组名有专用含义，如`vehicle_body`专属于车体，而其他组名与前文中载具`part`配置中的`structure_bone`参数对应，用于表达一个载具部件，如`turret`代表炮塔
@@ -60,14 +60,23 @@ icon: book
   <img src="/images/draw_obb1.png" style="width: 80%;">
 </div>
 <div style="display: flex; justify-content: center; gap: 10px;">
-  <p style="margin-top: 10px; font-size: 13px">你可以直接在视觉模型上拖拽拉伸绘制结构模型</p>
+  <p style="margin-top: 10px; font-size: 13px">你可以直接在渲染模型上拖拽拉伸绘制结构模型</p>
 </div>
 
-枢轴对齐是本章稍显费力的环节，因为基岩模型中，枢轴是嵌套递归计算绝对位置的，所以**视觉模型**中某结构的枢轴坐标往往不能直接抄给**结构模型**
+枢轴对齐是本章稍显费力的环节，因为基岩模型中，枢轴是嵌套递归计算绝对位置的，所以渲染模型中某结构的枢轴坐标往往不能直接抄给结构模型。
+::: tip
+你可以将渲染模型的组逐级解析到根层级，再复制它的枢轴值给结构模型
+:::
 <div style="text-align: center;">
   <div style="display: flex; justify-content: center; gap: 10px;">
     <img src="/images/draw_obb2.png" style="width: 45%;">
     <img src="/images/draw_obb3.png" style="width: 45%;">
   </div>
-  <p style="margin-top: 10px; font-size: 13px">炮塔的枢轴在视觉模型与结构模型的位置保持一致</p>
+  <p style="margin-top: 10px; font-size: 13px">炮塔的枢轴在渲染模型与结构模型的位置保持一致</p>
+</div>
+<div style="display: flex; justify-content: center; gap: 10px;">
+  <img src="/images/draw_obb4.png" style="width: 80%;">
+</div>
+<div style="display: flex; justify-content: center; gap: 10px;">
+  <p style="margin-top: 10px; font-size: 13px">解析渲染模型的分组</p>
 </div>
