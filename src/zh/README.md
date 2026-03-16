@@ -1,17 +1,17 @@
 ---
 home: true
 icon: house
-title: Limitless Vehicle
-heroText: Limitless Vehicle
-tagline: Vehicle Dev Docs
+title: 永无止境：载具
+heroText: 永无止境：载具
+tagline: 载具包开发文档
 heroFullScreen: true
 heroImage: /images/logo.jpg
 actions:
-  - text: Docs
+  - text: 载具包文档
     icon: book
     link: ./vehicle_pack/
     type: primary
 
-  - text: Editor
+  - text: 编辑器
     link: /vehicle-editor/
 ---

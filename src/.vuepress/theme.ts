@@ -37,8 +37,6 @@ export default hopeTheme({
       // sidebar
       sidebar: zhSidebar,
 
-      footer: "默认页脚",
-
       displayFooter: true,
 
       // page meta
@@ -132,16 +130,6 @@ export default hopeTheme({
   },
 
   plugins: {
-    // Note: This is for testing ONLY!
-    // You MUST generate and use your own comment service in production.
-    comment: {
-      provider: "Giscus",
-      repo: "vuepress-theme-hope/giscus-discussions",
-      repoId: "R_kgDOG_Pt2A",
-      category: "Announcements",
-      categoryId: "DIC_kwDOG_Pt2M4COD69",
-    },
-
     components: {
       components: ["Badge", "VPCard"],
     },
