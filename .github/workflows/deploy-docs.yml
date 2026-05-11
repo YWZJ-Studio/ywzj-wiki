@@ -42,8 +42,7 @@ jobs:
       # 5. 安装 wiki 依赖
       - name: 安装 Wiki 依赖
         run: |
-          corepack enable
-          pnpm install --frozen-lockfile
+          pnpm install --frozen-lockfile --ignore-scripts=false
 
       # 6. 构建 wiki
       - name: 构建文档
