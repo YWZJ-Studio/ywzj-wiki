@@ -45,31 +45,11 @@ icon: book
 <div style="display: flex; justify-content: center; gap: 10px;">
   <p style="margin-top: 10px; font-size: 13px">光瞄指挥机炮瞄准</p>
 </div>
-载具配置中有多种表达载具部件组织关系的方式
+载具配置中有三种表达载具部件组织关系的方式：
 
-- **附着关系** 
-空间上B会因A的移动而受限移动，如炮塔叠罗汉
-- **武器联动关系**
-A瞄准某位置，B也试图瞄准该位置，如战舰多炮塔
-- **父子关系**
-A拥有B这个部件，如泥头车的车斗、防空车的雷达
-
-这些关系是可以同时存在的，比如主炮塔上若有一个联动小炮塔，那这个小炮塔既有附着关系，即主炮塔转动导致小炮塔发生移动，又有武器联动关系，即小炮塔会试图瞄准主炮塔瞄准的位置
-
-### 附着关系
-```
-...
-    {
-      "id": "commander_machine_gun",
-      "name": "commander_machine_gun",
-      "type": "ywzj_vehicle:weapon",
-      "structure_bone": "commander_machine_gun",
-      "seat_offset": [0.5, 2.5, 0.275],
-      "operator_on_weapon_unit": false,
-      "base": "turret", # 车长机枪附着于主炮塔上
-      "rot_info": {
-...
-```
+- **空间附着** — 通过结构模型骨骼层级嵌套实现，子部件骨骼放在父部件骨骼之下即会随父部件运动
+- **武器联动关系** — A瞄准某位置，B也试图瞄准该位置，如战舰多炮塔、光瞄指挥炮塔
+- **父子关系** — A拥有B这个部件，如泥头车的车斗、防空车的雷达
 
 ### 武器联动关系
 ```
@@ -108,7 +88,6 @@ A拥有B这个部件，如泥头车的车斗、防空车的雷达
       "type": "ywzj_vehicle:weapon",
       "structure_bone": "auto_cannon",
       "fire_control_sensor_type": "eo",
-      "fire_control_lock_type": "aim_hit",
       "is_seat": false,
       "crosshair_style": "square",
       "rot_info": {
@@ -144,7 +123,6 @@ A拥有B这个部件，如泥头车的车斗、防空车的雷达
       "type": "ywzj_vehicle:radar",
       "structure_bone": "radar",
       "is_seat": false,
-      "base": "turret", # 雷达也附着于炮塔上
       "rot_info": {
         "x_rot_speed": 0,
         "y_rot_speed": 15,

@@ -8,12 +8,13 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "en-US",
-      title: "Docs Demo",
-      description: "A docs demo for vuepress-theme-hope",
+      title: "Limitless Vehicle",
+      description: "Vehicle Dev Docs",
     },
     "/zh/": {
       lang: "zh-CN",
       title: "永无止境：载具",
+      description: "载具包开发文档",
     },
   },
 

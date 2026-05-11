@@ -112,7 +112,7 @@
 {
   "evaluate": {
     "type": "script",
-    "script": "return context.getAnimationRunners().getPose('idle');"
+    "script": "return context.getAnimationRunners().getTrackPose('idle');"
   }
 }
 ```
@@ -169,7 +169,7 @@
   "type": "and",
   "conditions": [
     {"type": "script", "script": "context.getSpeed() > 0"},
-    {"type": "script", "script": "context.isOnGround()"}
+    {"type": "script", "script": "context.getPower() > 0.5"}
   ]
 }
 ```
@@ -182,7 +182,7 @@
   "type": "or",
   "conditions": [
     {"type": "script", "script": "context.getSpeed() > 0"},
-    {"type": "script", "script": "context.isOnGround()"}
+    {"type": "script", "script": "context.getPower() > 0.5"}
   ]
 }
 ```
@@ -195,7 +195,7 @@
   "type": "not",
   "condition": {
     "type": "script",
-    "script": "context.isOnGround()"
+    "script": "context.getSpeed() > 0"
   }
 }
 ```
@@ -269,6 +269,6 @@
 ```json
 {
   "type": "script",
-  "script": "context.setSpeed(0);"
+  "script": "context.setFloat(\"speed\", 0);"
 }
 ```

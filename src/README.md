@@ -9,7 +9,7 @@ heroImage: /images/logo.jpg
 actions:
   - text: Docs
     icon: book
-    link: ./vehicle_pack/
+    link: /zh/vehicle_pack/
     type: primary
 
   - text: Editor

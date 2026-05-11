@@ -7,11 +7,17 @@ tagline: 载具包开发文档
 heroFullScreen: true
 heroImage: /images/logo.jpg
 actions:
+  - text: 玩法指南
+    icon: book
+    link: ./gameplay/
+    type: primary
+
   - text: 载具包文档
     icon: book
     link: ./vehicle_pack/
-    type: primary
+    type: secondary
 
   - text: 编辑器
     link: /vehicle-editor/
+    type: secondary
 ---

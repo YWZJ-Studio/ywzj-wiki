@@ -66,14 +66,18 @@ icon: book
 ```
 "attributes": {
     "main_rotor_force": 0.07, # 主螺旋桨推力
+    "ceiling": 256, # 升限（最大飞行高度）
     "x_rot_speed_acceleration": 1.0, # 俯仰旋转加速度
     "x_rot_speed_max": 4.0, # 最大俯仰转速
     "y_rot_speed_acceleration": 1.0, # 水平旋转加速度
     "y_rot_speed_max": 4.0, # 最大水平转速
     "z_rot_speed_acceleration": 1.0, # 滚转加速度
     "z_rot_speed_max": 4.0, # 最大滚转转速
-    "max_air_speed": 1.5 # 最大空速
-  }
+    "max_air_speed": 1.5, # 最大空速
+    "fast_roping": false, # 是否支持快速索降
+    "fast_roping_door_id": "" # 索降用的门部件ID
+  },
+  "landing_gear_part_id": "" # 起落架部件ID
 ```
 
 ### 固定翼式
@@ -88,6 +92,8 @@ icon: book
     "air_drag_k_min": 0.002, // 攻角为0度时的空气阻力系数
     "air_drag_k_max": 0.008, // 攻角为180度时的空气阻力系数
     "lift_to_drag_k": 15.0,  // 升阻比
+    "angle_of_attack_min": -10, // 最小攻角（度），超出将失速
+    "angle_of_attack_max": 25,  // 最大攻角（度），超出将失速
     "x_rot_input_drag_k": 1.0, // 三轴舵面阻力系数
     "y_rot_input_drag_k": 0.25,
     "z_rot_input_drag_k": 0.125,
@@ -98,4 +104,5 @@ icon: book
     "z_turn_rate": 4,
     "vortex_offsets": [[19.84, 5.078, -3.373], [-19.84, 5.078, -3.373]] // 翼尖涡流偏移
   },
+  "landing_gear_part_id": "" // 起落架部件ID
 ```
