@@ -29,7 +29,8 @@ icon: book
 | 自动武器站 | ywzj_vehicle:auto_weapon  | 和武器站类似，但可以自动瞄准开火      |
 | 雷达    |    ywzj_vehicle:radar     | 转动和扫描一定范围内的实体，使武器站能锁定 |
 | 门     |     ywzj_vehicle:door     | 在门的位置上下载具，可开关         |
-| 起落架   | ywzj_vehicle:landing_gear | 飞行载具专用                |
+| 起落架   | ywzj_vehicle:landing_gear | 起落架会影响载具物理块的高度，可开关    |
+| 弹舱    |  ywzj_vehicle:weapon_bay  | 载具内置弹舱，可开关               |
 
 ## 载具部件的组织
 载具部件之间可能存在**联动关系**，比如车长机枪附着于主炮塔上，主炮塔转动会带动车长机枪运动；又比如直升机的光瞄摄像机指向某个位置，炮塔也将瞄准该位置

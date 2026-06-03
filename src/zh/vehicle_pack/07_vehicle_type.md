@@ -103,6 +103,7 @@ icon: book
     "y_turn_rate": 3,
     "z_turn_rate": 4,
     "vortex_offsets": [[19.84, 5.078, -3.373], [-19.84, 5.078, -3.373]] // 翼尖涡流偏移
+    "afterburner_offsets": [[0.52, 1.823, -8.2, 0.5], [-0.52, 1.823, -8.2, 0.5]] // 加力尾焰偏移与缩放
   },
   "landing_gear_part_id": "" // 起落架部件ID
 ```

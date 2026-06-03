@@ -34,7 +34,7 @@ icon: book
     "third_person_center_offset": [0, 3, 0],
     "third_person_distance": 7,
     "sound_distance": 7,
-    "passenger_view_rot": {               # 载具旋转是否主动影响玩家视角旋转
+    "passenger_view_rot": {               # 载具旋转是否影响玩家视角旋转
       "rot_by_vehicle_in_third_person": false,
       "rot_by_vehicle_in_operator": true
     }
@@ -54,7 +54,7 @@ icon: book
   },
   "with_warning_receiver": false, # 是否拥有导弹告警接收机（RWR），可探测来袭导弹并发出警告
   "protect_passenger": false, # 碰撞时是否保护乘客免受伤害
-  "center_offset": [0, 0, 0], # 质心偏移，影响载具物理行为
+  "center_offset": [0, 0, 0], # 载具旋转中心偏移
   "structure_model": "ywzj_vehicle:vehicle/ztz99a", # 结构模型，存放于 data/tutorial/models/bedrock/vehicle/ztz99a.structure.json
   "parts": [ # 载具部件配置，注意：第一个可乘坐的部件是驾驶员位
     {
@@ -70,8 +70,9 @@ icon: book
         "x_rot_min": -13    # 仰角
       },
       "optical_sight_offset": [0.719, 0.883, 0.14], # 武器单元的瞄具位置相对于武器单元枢轴的偏移，影响开镜视角
-      "operator_view_offset": [0, 1.5, 0],  # 武器单元的第三人称位置相对于武器单元枢轴的偏移，影响开镜视角
+      "operator_view_offset": [0, 1.5, 0],  # 武器单元的第一人称位置相对于武器单元枢轴的偏移，影响座舱视角
       "optical_sight_type": "crt", # 开镜时有模拟电视效果
+      "zoom_min": 1, # 开镜的最小放大倍数
       "zoom_max": 8, # 开镜的最大放大倍数
       "weapons": [ # 武器配置，本武器单元有三种武器：主炮、同轴机枪、烟雾发射器，其后两者也属于载具的部件
         "tutorial:cannon_125mm",

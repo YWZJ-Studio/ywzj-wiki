@@ -123,11 +123,11 @@ icon: book
 
 仅在 `guidance` 为 `HOMING` 时有效：
 
-| 模式 | 说明 |
-|:----|:----|
-| `IR` | 红外制导，追踪热源目标（发动机、尾焰等） |
-| `EO` | 光电制导，追踪可见光目标 |
-| `SEMI_ACTIVE_RADAR` | 半主动雷达制导，依赖发射载具的雷达持续照射 |
+| 模式 | 说明                        |
+|:----|:--------------------------|
+| `INFRARED` | 红外制导                |
+| `ELECTRO_OPTICAL` | 光电制导                 |
+| `SEMI_ACTIVE_RADAR` | 半主动雷达制导，依赖发射载具的雷达持续照射     |
 | `ACTIVE_RADAR` | 主动雷达制导，导弹自带雷达，达到设定距离后主动搜索 |
 
 ## 火箭 (rocket)
@@ -180,15 +180,21 @@ icon: book
 
 ## 航弹 (aerial_bomb)
 
-航空炸弹，仅固定翼载具可用。从载具上投放而非发射，飞行速度跟随载具。
+航空炸弹，无动力的平抛爆炸物，可钻地，配置`homing`为`true`可启用制导航弹，具备追踪锁定的目标实体或瞄准点坐标的能力。
 
 ```json
 {
   "type": "ywzj_vehicle:aerial_bomb",
-  "name": "航空炸弹",
+  "name": "制导航弹",
   "damage": 500,
   "shoot_interval": 1000,
   "max_capacity": 4,
+  "fuse_delay_tick": 60,
+  "penetration_depth": 0,
+  "homing": false,
+  "drag_coefficient": 0.005,
+  "max_g": 2,
+  "reference_speed": 1,
   "explosion": {
     "explode": true,
     "damage": 1000,
@@ -198,9 +204,28 @@ icon: book
 }
 ```
 
-## 热诱弹 (decoy_flare)
+| 字段 | 类型 | 默认值 | 说明 |
+|:----|:----|:----|:----|
+| `damage` | float | 5 | 直接命中伤害 |
+| `shoot_interval` | int | 100 | 投放间隔（毫秒） |
+| `max_capacity` | int | 64 | 载弹量 |
+| `fuse_delay_tick` | int | 60 | 引信延迟（tick），触地后延时引爆 |
+| `penetration_depth` | float | 0 | 侵彻深度，穿入方块的距离 |
+| `homing` | bool | false | 是否启用制导，为`true`则航弹追踪锁定目标 |
+| `drag_coefficient` | float | 0.005 | 空气阻力系数，影响制导段的机动衰减 |
+| `max_g` | float | 2 | 最大过载（G），限制制导段的转弯强度 |
+| `reference_speed` | float | 1 | 参考速度，影响制导段的修正强度 |
+| `explosion` | object | — | 爆炸参数，参见[爆炸与核弹](#爆炸与核弹) |
 
-红外干扰弹，用于诱骗红外制导导弹，是防御性武器。默认按 `Left Alt` 键快速发射。
+### 制导航弹
+
+当`homing`为`true`时，航弹投放后会追踪当前武器站**锁定**的目标实体；若未锁定实体但有瞄准点坐标，则飞向瞄准点。
+
+制导航弹的机动性由`drag_coefficient`、`max_g`、`reference_speed`共同控制，预期用于短距滑翔修正而非远距巡航——`max_g`默认仅2G，远小于导弹的30G。
+
+## 热诱箔条 (decoy_flare)
+
+可干扰红外弹与雷达弹。默认按 `Left Alt` 键发射。
 
 ```json
 {

@@ -10,7 +10,7 @@ icon: book
 
 ## 模型注意事项
 载具使用基岩模型来渲染实体，关于基岩模型资产，有如下要点：
-- 模型的朝向一定是Z轴正方向，即Minecraft中实体yaw为0时的朝向
+- 模型的朝向一定是**Z轴正方向**，即Minecraft中实体yaw为0时的朝向
 
    <div style="display: flex; justify-content: center; gap: 10px;">
     <img src="/images/prepare_assets1.png" style="width: 65%;">

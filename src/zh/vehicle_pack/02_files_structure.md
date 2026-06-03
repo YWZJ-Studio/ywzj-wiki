@@ -43,7 +43,7 @@ vehicle_pack.meta.json文件包含了载具包的基本识别信息，其中`tit
     "license": "All Rights Reserved",
     "authors": ["YWZJ"],
     "url": "https://github.com/YWZJ-Studio",
-    "dependencies": {}
+    "dependencies": {"ywzj_vehicle": "[0.5.5,)"} # 声明载具包所依赖的模组与版本范围
 }
 ```
 
